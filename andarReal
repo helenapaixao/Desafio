@@ -1,0 +1,23 @@
+// Os americanos são muito supersticiosos! Você sabia que em Nova York 85% dos prédios não tem o 13º andar?
+// Nosso problema trata-se de um proprietário mais supersticiosa ainda (sim é possível).
+// Os prédios que ele constrói não tem o 13º andar e nemhum outro andar que contenha 13. 
+//Não satisfeito ele também tem uma birra com o número 4, logo, não aceita nenhum andar 
+//que contenha 4 como por exemplo (24, 34, 44, etc.)
+// Nesses casos, o elevador do prédio pula o número desses andares, mas para o contrutor esse andar existe normalmente, isto é, o 5º andar do elevador na verdade é o 4º andar do prédio.
+// Você foi contratado para criar um algoritmo que identifica essas restrições e retorna o andar correto a partir do número do andar escolhido no painel do elevador.
+// Para isto, implemente a "andarReal" abaixo que recebe por parâmetro o número do andar escolhido no elevador e retorna o andar real do prédio seguindo as regras do dono supersticioso.
+
+//andarReal =4 andarElevador =5
+//não pode 13 e nem conter 4
+
+
+function andarReal(andarElevador) {
+  let andar=andarElevador;
+  for(let i =1;i<= andarElevador;i++){
+    if(i == 13 || (i.toString().indexOf("4") != -1)){
+      andar--;
+    }
+  }
+  
+  return andar;
+}
